@@ -1,0 +1,141 @@
+﻿@model IEnumerable<Vidly.Models.Movie>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Movies</h2>
+<style>
+    .linkcolor{
+        color:white
+    }
+</style>
+
+
+
+
+    <table id="movies" class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <td>
+                    Movie
+                </td>
+                <td>
+                    Genre
+                </td>
+
+               
+            </tr>
+        </thead>
+        <tbody>
+          
+        </tbody>
+
+
+
+    </table>
+
+
+
+@section scripts{
+    
+    <script>
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+
+        $("document").ready(function () {
+
+
+      var table=$("#movies").DataTable({
+
+
+                ajax: {
+
+                    url: "/api/movies",
+                    dataSrc:""
+
+                },
+                columns: [
+
+                    {
+
+                        data: "name",
+                       
+
+                    },
+                    {
+
+                        data:"genres.name"
+
+
+                    }
+
+
+
+
+
+                ]
+
+
+
+
+
+
+
+
+
+
+
+
+            });
+                
+
+
+
+
+
+      
+
+
+
+
+        });
+
+          
+
+
+
+
+
+
+
+
+
+
+    </script>
+    
+    
+    
+    
+    
+    
+    }
+
+
+
+
+
+
+
+
